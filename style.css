@@ -193,6 +193,7 @@ p, li {
   font-style: italic;
   color: #555;
   margin-bottom: 10px;
+  list-style: none;
 }
 
 .testimonial-author {
@@ -226,6 +227,15 @@ p, li {
 
 .carousel-button.next {
   right: 10px;
+}
+
+/* Remove bolinhas de qualquer lista no carrossel */
+.carousel ul,
+.carousel ol,
+.carousel li {
+  list-style: none !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
 }
 
 /* Formulário de contato */
@@ -298,7 +308,6 @@ footer {
     margin-top: 10px;
   }
 
-  /* Menu horizontal no celular */
   .nav-menu {
     display: flex !important;
     flex-direction: row !important;
@@ -316,7 +325,6 @@ footer {
     font-size: 0.9rem;
   }
 
-  /* Mostrar botões do carrossel no celular */
   .carousel-button {
     display: block !important;
     padding: 6px;
