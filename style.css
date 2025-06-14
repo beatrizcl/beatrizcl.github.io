@@ -79,6 +79,7 @@ nav {
   margin-top: -10px;
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
+  overflow-x: auto;
 }
 
 .nav-menu {
@@ -95,6 +96,7 @@ nav {
   padding: 6px 12px;
   border-radius: 6px;
   transition: background 0.3s, color 0.3s;
+  white-space: nowrap;
 }
 
 .nav-menu a:hover,
@@ -211,6 +213,7 @@ p, li {
   font-size: 1.2rem;
   transition: background 0.3s;
   color: #666;
+  z-index: 2;
 }
 
 .carousel-button:hover {
@@ -295,23 +298,27 @@ footer {
     margin-top: 10px;
   }
 
-  /* MENU: mantém itens lado a lado */
+  /* Menu horizontal no celular */
   .nav-menu {
-    flex-direction: row;      /* mantem horizontal */
-    gap: 15px;
-    margin-top: 10px;
-    justify-content: center;
-    flex-wrap: wrap;          /* permite quebrar em várias linhas se precisar */
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    justify-content: center !important;
+    gap: 15px !important;
+    margin-top: 10px !important;
+    overflow-x: auto;
+    padding: 10px;
   }
 
   .nav-menu a {
+    white-space: nowrap;
     padding: 6px 10px;
     font-size: 0.9rem;
   }
 
-  /* Carrossel: mostra os botões no celular, mas menores */
+  /* Mostrar botões do carrossel no celular */
   .carousel-button {
-    display: block;
+    display: block !important;
     padding: 6px;
     font-size: 1rem;
   }
