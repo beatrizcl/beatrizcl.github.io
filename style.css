@@ -22,14 +22,15 @@ body {
 header {
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  padding: 20px 0;
+  padding: 20px 0 10px 0;
 }
 
 .header-content {
   display: flex;
+  justify-content: flex-start;
   align-items: center;
-  gap: 20px; /* Espaço entre foto e texto */
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .profile-photo {
@@ -38,29 +39,53 @@ header {
   border-radius: 50%;
   object-fit: cover;
   border: 3px solid #d1665f;
-  margin: 0; /* Remove margin-bottom para alinhamento lateral */
-  flex-shrink: 0; /* Impede encolhimento da foto */
 }
 
+/* Texto do cabeçalho */
 .header-text {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  max-width: calc(100% - 170px); /* Para evitar ultrapassar container */
+  justify-content: center;
 }
 
-.header-content h1 {
+.header-text h1 {
   font-size: 2rem;
   font-weight: 600;
-  color: #d1665f; /* cor harmoniosa com cabelo ruivo */
+  color: #d1665f;
+  margin-bottom: 5px;
 }
 
+.header-text .subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+  margin-left: 2px;
+}
+
+.header-text .tagline {
+  font-size: 0.85rem;
+  color: #888;
+  font-style: italic;
+  margin-top: 20px;
+  align-self: flex-end;
+  text-align: right;
+  white-space: nowrap;
+}
+
+
 /* Navegação */
+nav {
+  background-color: #ffffff;
+  margin-bottom: 10px;
+}
+
 .nav-menu {
   list-style: none;
   display: flex;
   gap: 20px;
-  margin-top: 10px;
+  padding: 10px 0;
+  justify-content: center;
 }
 
 .nav-menu a {
@@ -79,7 +104,7 @@ header {
 
 /* Seções */
 main section {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 h2 {
@@ -184,6 +209,40 @@ p, li {
   background-color: #b44f48;
 }
 
+/* Projetos */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.project-card h3 {
+  color: #d1665f;
+  margin-bottom: 10px;
+}
+
+.project-card .btn {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #d1665f;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  margin-top: 10px;
+}
+
+.project-card .btn:hover {
+  background-color: #b44f48;
+}
+
 /* Rodapé */
 footer {
   text-align: center;
@@ -193,24 +252,47 @@ footer {
   margin-top: 40px;
 }
 
+/* Animações */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn ease-in 1 forwards;
+  animation-duration: 0.8s;
+}
+
+.fade-in.delay-1 {
+  animation-delay: 0.3s;
+}
+
+.fade-in.delay-2 {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Responsivo */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
   }
 
-  .carousel-slide {
-    min-width: 100%;
-  }
-
-  .carousel-button {
-    display: none;
+  .header-text .tagline {
+    text-align: center;
+    margin-left: 0;
   }
 
   .nav-menu {
     flex-direction: column;
     gap: 10px;
-    margin-top: 10px;
   }
 }
