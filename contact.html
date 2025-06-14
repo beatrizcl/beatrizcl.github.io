@@ -4,10 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact – Beatriz Cristina Luiz</title>
+
+  <!-- Importando Font Awesome Free via CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
 </head>
+
 <body>
   <header>
     <div class="container header-content">
@@ -30,17 +41,18 @@
   <main class="container">
     <section>
       <h2>Get in Touch</h2>
-      <p>
-        I'm always open to new opportunities, collaborations, and interesting projects. Whether you want to discuss potential RPA solutions, software development, or just say hello, feel free to reach out!
-      </p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/bealuiz/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+        <a href="https://github.com/beatrizcl" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+      </div>      
+      <p>Or feel free to contact me through the form below.</p>
 
-      <div class="contact-info">
-        <p><strong>Email:</strong> <a href="mailto:bealuiz@gmail.com">bealuiz@gmail.com</a></p>
-        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/bealuiz/" target="_blank" rel="noopener noreferrer">linkedin.com/in/bealuiz</a></p>
-        <p><strong>GitHub:</strong> <a href="https://github.com/beatrizcl" target="_blank" rel="noopener noreferrer">github.com/beatrizcl</a></p>
-      </div>
 
-      <h3>Or send me a message directly:</h3>
+
       <form action="https://formspree.io/f/xnnvvpak" method="POST" class="contact-form" novalidate>
         <label for="name">Name</label><br />
         <input type="text" id="name" name="name" placeholder="Your name" required /><br />
@@ -54,6 +66,7 @@
         <button type="submit">Send Message</button>
       </form>
     </section>
+
   </main>
 
   <footer>
