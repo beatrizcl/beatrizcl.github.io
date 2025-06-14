@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Beatriz Cristina Luiz</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <img src="assets/perfil.jpg" alt="Beatriz Cristina Luiz" class="profile-photo" />
+      <div class="header-text">
+        <h1>Contact</h1>
+        <p>Get in touch with me</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <ul class="nav-menu container">
+      <li><a href="index.html">About</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="container">
+    <section>
+      <h2>Get in Touch</h2>
+      <p>
+        I'm always open to new opportunities, collaborations, and interesting projects. Whether you want to discuss potential RPA solutions, software development, or just say hello, feel free to reach out!
+      </p>
+
+      <div class="contact-info">
+        <p><strong>Email:</strong> <a href="mailto:bealuiz@gmail.com">bealuiz@gmail.com</a></p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/bealuiz/" target="_blank" rel="noopener noreferrer">linkedin.com/in/bealuiz</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/beatrizcl" target="_blank" rel="noopener noreferrer">github.com/beatrizcl</a></p>
+      </div>
+
+      <h3>Or send me a message directly:</h3>
+      <form action="https://formspree.io/f/xnnvvpak" method="POST" class="contact-form" novalidate>
+        <label for="name">Name</label><br />
+        <input type="text" id="name" name="name" placeholder="Your name" required /><br />
+
+        <label for="email">Email</label><br />
+        <input type="email" id="email" name="_replyto" placeholder="Your email" required /><br />
+
+        <label for="message">Message</label><br />
+        <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea><br />
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Beatriz Cristina Luiz</p>
+  </footer>
+</body>
+</html>
