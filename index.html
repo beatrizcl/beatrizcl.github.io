@@ -9,6 +9,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
   <script defer src="carousel.js"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -22,7 +27,7 @@
     </div>
   </header>
 
-  <!-- Menu Lateral logo abaixo do header -->
+  <!-- Menu Lateral unificado -->
   <aside class="sidebar">
     <div class="menu-toggle">&#9776;</div>
     <ul class="sidebar-menu">
@@ -33,13 +38,19 @@
         </a>
       </li>
       <li>
-        <a href="portfolio.html" title="Portfolio">
+        <a href="#portfolio" title="Portfolio">
           <i class="fas fa-briefcase"></i>
           <span class="menu-text">Portfolio</span>
         </a>
       </li>
       <li>
-        <a href="contact.html" title="Contact">
+        <a href="#testimonials" title="Testimonials">
+          <i class="fas fa-comments"></i>
+          <span class="menu-text">Testimonials</span>
+        </a>
+      </li>
+      <li>
+        <a href="#contact" title="Contact">
           <i class="fas fa-envelope"></i>
           <span class="menu-text">Contact</span>
         </a>
@@ -48,7 +59,9 @@
   </aside>
 
   <main class="container">
-    <section>
+
+    <!-- About Section -->
+    <section id="about" tabindex="-1">
       <h2>About Me</h2>
       <p>
         Software Developer with solid experience in <strong>Robotic Process Automation (RPA)</strong>, backend development, and systems integration. I have worked both as an in-house developer and as a freelance RPA consultant for companies in Brazil and abroad.
@@ -62,11 +75,49 @@
       <p>
         Outside work, I enjoy playing piano, studying languages, board games, cycling, and volunteering as a catechist.
       </p>
-
-
     </section>
 
-    <section class="testimonials-section">
+    <!-- Portfolio Section -->
+    <section id="portfolio" tabindex="-1">
+      <h2>My Projects</h2>
+      <p>Coming soon: detailed RPA projects with videos and explanations.</p>
+
+      <div class="projects-grid">
+
+        <!-- TCC como primeiro projeto -->
+        <article class="project-card">
+          <h3>Fuzzy Shell for Decision Support Systems</h3>
+          <p>
+            Final graduation project developed with Paulo R. E. de Oliveira Jr. for our B.Sc. in Computer Science.
+            The goal was to build a reusable Shell capable of generating fuzzy logic systems with a graphical interface,
+            enabling experts from any domain to model decision-making processes involving uncertainty and imprecise data.
+            <br><br>
+            We implemented a fuzzy inference engine supporting trapezoidal membership functions and rule evaluation using
+            Mamdani-style logic (Min/Max operators). The system includes:
+            <ul>
+              <li>Definition of linguistic variables and fuzzy sets</li>
+              <li>Creation of fuzzy rules using AND/OR logic</li>
+              <li>Inference calculation and defuzzification via the Centroid method</li>
+              <li>Web interface built with Django for model management and simulation</li>
+            </ul>
+            Users can define input/output variables, create inference rules, test different scenarios, and view results graphically.
+            The prototype was validated with 25 students and compared to the JFuzzyLogic framework, proving effective and intuitive.
+          </p>
+          <a href="https://repositorio.animaeducacao.com.br/items/22292449-5c4d-4edb-b1fd-f6170af4fca8" class="btn" target="_blank" aria-label="Open full paper PDF">Read full paper (PDF)</a>
+        </article>
+
+        <!-- Outro projeto -->
+        <article class="project-card">
+          <h3>Project Title 2</h3>
+          <p>Description of another RPA project, tools used and impact.</p>
+          <a href="#" class="btn" aria-label="Watch video walkthrough of Project Title 2">Watch video</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" tabindex="-1" class="testimonials-section">
       <h2>What My Colleagues Say</h2>
       <div class="carousel" aria-label="Testimonials Carousel">
         <button class="carousel-button prev" aria-label="Previous testimonial">&#10094;</button>
@@ -120,28 +171,38 @@
       </div>
     </section>
 
-    <section>
-      <h2>Publications</h2>
-      <div class="publication">
-          <h3>
-          <a href="https://repositorio.animaeducacao.com.br/items/22292449-5c4d-4edb-b1fd-f6170af4fca8" target="_blank" rel="noopener noreferrer">
-              FUZZY: Development of a Shell for the Construction of Diffuse Systems Models
-          </a>
-          </h3>
-          <p><strong>Riuni – UNISUL · Jun 23, 2020</strong></p>
-          <p>
-          This article presents the development of a Shell for the automatic generation of Fuzzy systems,
-          which allows the definition of linguistic variables, relevance degrees, and rules used in the
-          Fuzzification and De-fuzzification processes. It was tested by Computer Science students at Unisul
-          and compared to a consolidated framework. Results showed its effectiveness in handling imprecise data
-          and supporting decisions in fuzzy systems.
-          </p>
-      </div>
+    <!-- Contact Section -->
+    <section id="contact" tabindex="-1">
+      <h2>Get in Touch</h2>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/beatrizcl/" target="_blank" aria-label="LinkedIn">
+          <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+        <a href="https://github.com/beatrizcl" target="_blank" aria-label="GitHub">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+      </div>      
+      <p>Or feel free to contact me through the form below.</p>
+
+      <form action="https://formspree.io/f/xnnvvpak" method="POST" class="contact-form" novalidate>
+        <label for="name">Name</label><br />
+        <input type="text" id="name" name="name" placeholder="Your name" required /><br />
+
+        <label for="email">Email</label><br />
+        <input type="email" id="email" name="_replyto" placeholder="Your email" required /><br />
+
+        <label for="message">Message</label><br />
+        <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea><br />
+
+        <button type="submit">Send Message</button>
+      </form>
     </section>
+
   </main>
 
   <footer>
     <p>&copy; 2025 Beatriz Cristina Luiz</p>
   </footer>
+
 </body>
 </html>

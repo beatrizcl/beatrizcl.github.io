@@ -1,44 +1,118 @@
-const track = document.querySelector('.carousel-track');
-const slides = Array.from(track.children);
-const prevButton = document.querySelector('.carousel-button.prev');
-const nextButton = document.querySelector('.carousel-button.next');
-const slideWidth = slides[0].getBoundingClientRect().width;
+// script.js
 
-let currentIndex = 0;
+document.addEventListener('DOMContentLoaded', () => {
+  const sidebar = document.querySelector('.sidebar');
+  const menuLinks = document.querySelectorAll('.sidebar-menu a.menu-link');
+  const sections = document.querySelectorAll('main section');
+  const menuToggle = document.querySelector('.menu-toggle');
 
-// Posiciona os slides lado a lado
-slides.forEach((slide, index) => {
-  slide.style.left = slideWidth * index + 'px';
-});
+  // Scroll suave ao clicar no menu lateral
+  menuLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (!targetSection) return;
 
-function moveToSlide(track, current, target, index) {
-  track.style.transform = `translateX(-${slideWidth * index}px)`; // Uso correto de template string
-  current.classList.remove('current-slide');
-  target.classList.add('current-slide');
-  currentIndex = index; // Atualiza o índice global
-}
+      window.scrollTo({
+        top: targetSection.offsetTop - 65, // Offset para header fixo
+        behavior: 'smooth',
+      });
 
-prevButton.addEventListener('click', () => {
-  const currentSlide = slides[currentIndex];
-  const prevIndex = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
-  const prevSlide = slides[prevIndex];
-  moveToSlide(track, currentSlide, prevSlide, prevIndex);
-});
+      // Fechar sidebar no mobile após clique
+      if (window.innerWidth <= 768) {
+        sidebar.classList.remove('active');
+      }
+    });
+  });
 
-nextButton.addEventListener('click', () => {
-  const currentSlide = slides[currentIndex];
-  const nextIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
-  const nextSlide = slides[nextIndex];
-  moveToSlide(track, currentSlide, nextSlide, nextIndex);
-});
+  // Função para detectar qual seção está ativa (visível)
+  function activateSectionOnScroll() {
+    const scrollPosition = window.scrollY || window.pageYOffset;
 
-// Inicializa o primeiro slide como ativo
-slides[0].classList.add('current-slide');
-track.style.transform = 'translateX(0)';
+    sections.forEach(section => {
+      const offsetTop = section.offsetTop - 70;
+      const offsetBottom = offsetTop + section.offsetHeight;
+      const id = section.getAttribute('id');
 
-const toggle = document.querySelector('.menu-toggle');
-const sidebar = document.querySelector('.sidebar');
+      if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+        section.classList.add('active');
+        // Atualiza menu ativo
+        menuLinks.forEach(link => {
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      } else {
+        section.classList.remove('active');
+      }
+    });
+  }
 
-toggle.addEventListener('click', () => {
-  sidebar.classList.toggle('active');
+  // Inicializa a ativação no scroll
+  window.addEventListener('scroll', activateSectionOnScroll);
+  activateSectionOnScroll();
+
+  // Expande sidebar ao passar o mouse (desktop)
+  sidebar.addEventListener('mouseenter', () => {
+    if (window.innerWidth > 768) {
+      sidebar.classList.add('expanded');
+    }
+  });
+  sidebar.addEventListener('mouseleave', () => {
+    if (window.innerWidth > 768) {
+      sidebar.classList.remove('expanded');
+    }
+  });
+
+  // Toggle sidebar no mobile
+  if(menuToggle){
+    menuToggle.addEventListener('click', () => {
+      sidebar.classList.toggle('active');
+    });
+  }
+
+  // CARROSSEL DE TESTIMONIALS
+
+  const track = document.querySelector('.carousel-track');
+  if (!track) return;
+
+  const slides = Array.from(track.children);
+  const prevButton = document.querySelector('.carousel-button.prev');
+  const nextButton = document.querySelector('.carousel-button.next');
+
+  // Atualizar slideWidth ao redimensionar
+  let slideWidth = slides[0].getBoundingClientRect().width;
+
+  function setSlidePositions() {
+    slides.forEach((slide, index) => {
+      slide.style.left = slideWidth * index + 'px';
+    });
+  }
+  setSlidePositions();
+
+  window.addEventListener('resize', () => {
+    slideWidth = slides[0].getBoundingClientRect().width;
+    setSlidePositions();
+    moveToSlide(currentIndex); // mantém o slide atual na tela após resize
+  });
+
+  let currentIndex = 0;
+
+  function moveToSlide(index) {
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+    track.style.transform = 'translateX(-' + slides[index].style.left + ')';
+    currentIndex = index;
+  }
+
+  prevButton.addEventListener('click', () => {
+    moveToSlide(currentIndex - 1);
+  });
+
+  nextButton.addEventListener('click', () => {
+    moveToSlide(currentIndex + 1);
+  });
 });

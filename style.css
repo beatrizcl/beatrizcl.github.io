@@ -156,6 +156,7 @@ p, li {
   border-radius: 6px;
   text-decoration: none;
   margin-top: 10px;
+  transition: background-color 0.3s;
 }
 
 .project-card .btn:hover {
@@ -178,8 +179,9 @@ p, li {
 
 .carousel-track {
   display: flex;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease-in-out;
   gap: 20px;
+  will-change: transform;
 }
 
 .carousel-slide {
@@ -215,6 +217,7 @@ p, li {
   transition: background 0.3s;
   color: #666;
   z-index: 2;
+  user-select: none;
 }
 
 .carousel-button:hover {
@@ -332,6 +335,7 @@ footer {
   }
   
 }
+
 /* Menu Lateral */
 .sidebar {
   position: fixed;
@@ -348,9 +352,10 @@ footer {
   padding-top: 20px;
   transition: width 0.3s ease;
   z-index: 1000;
+  overflow: hidden;
 }
 
-.sidebar:hover {
+.sidebar.expanded {
   width: 200px;
 }
 
@@ -358,6 +363,7 @@ footer {
   list-style: none;
   width: 100%;
   padding: 0;
+  margin: 0;
 }
 
 .sidebar-menu li {
@@ -370,10 +376,11 @@ footer {
   padding: 12px 20px;
   color: #666;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.3s;
 }
 
-.sidebar-menu a:hover {
+.sidebar-menu a:hover,
+.sidebar-menu a.active {
   background-color: #f0e5e4;
   color: #d1665f;
 }
@@ -388,10 +395,12 @@ footer {
   white-space: nowrap;
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none;
 }
 
-.sidebar:hover .menu-text {
+.sidebar.expanded .menu-text {
   opacity: 1;
+  pointer-events: auto;
 }
 
 /* Botão de menu hambúrguer */
@@ -428,11 +437,11 @@ footer {
     display: flex;
   }
 
-  .sidebar:hover {
-    width: 60px;
+  .sidebar.expanded {
+    width: 60px !important;
   }
 
-  .sidebar:hover .menu-text {
-    display: none;
+  .sidebar.expanded .menu-text {
+    display: none !important;
   }
 }
