@@ -2,41 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact – Beatriz Cristina Luiz</title>
-
-  <!-- Importando Font Awesome Free via CDN -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-  />
-
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Beatriz Cristina Luiz – RPA Developer</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script defer src="carousel.js"></script>
 </head>
-
 <body>
   <header>
     <div class="container header-content">
       <img src="assets/perfil.jpg" alt="Beatriz Cristina Luiz" class="profile-photo" />
       <div class="header-text">
-        <h1>Contact</h1>
-        <p>Get in touch with me</p>
+        <h1 class="fade-in">Contact</h1>
+        <p class="fade-in delay-1 subtitle">-</p>
       </div>
     </div>
   </header>
 
-  <nav>
-    <ul class="nav-menu container">
-      <li><a href="index.html">About</a></li>
-      <li><a href="portfolio.html">Portfolio</a></li>
-      <li><a href="contact.html" class="active" aria-current="page">Contact</a></li>
+  <!-- Menu Lateral logo abaixo do header -->
+  <aside class="sidebar">
+    <div class="menu-toggle">&#9776;</div>
+    <ul class="sidebar-menu">
+      <li>
+        <a href="#about" title="About">
+          <i class="fas fa-user"></i>
+          <span class="menu-text">About</span>
+        </a>
+      </li>
+      <li>
+        <a href="portfolio.html" title="Portfolio">
+          <i class="fas fa-briefcase"></i>
+          <span class="menu-text">Portfolio</span>
+        </a>
+      </li>
+      <li>
+        <a href="contact.html" title="Contact">
+          <i class="fas fa-envelope"></i>
+          <span class="menu-text">Contact</span>
+        </a>
+      </li>
     </ul>
-  </nav>
+  </aside>
 
   <main class="container">
     <section>

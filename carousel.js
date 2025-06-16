@@ -12,7 +12,7 @@ slides.forEach((slide, index) => {
 });
 
 function moveToSlide(track, current, target, index) {
-  track.style.transform = `translateX(-${slideWidth * index}px)`;
+  track.style.transform = `translateX(-${slideWidth * index}px)`; // Uso correto de template string
   current.classList.remove('current-slide');
   target.classList.add('current-slide');
   currentIndex = index; // Atualiza o índice global
@@ -35,3 +35,10 @@ nextButton.addEventListener('click', () => {
 // Inicializa o primeiro slide como ativo
 slides[0].classList.add('current-slide');
 track.style.transform = 'translateX(0)';
+
+const toggle = document.querySelector('.menu-toggle');
+const sidebar = document.querySelector('.sidebar');
+
+toggle.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
