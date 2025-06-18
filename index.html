@@ -80,10 +80,47 @@
     <!-- Portfolio Section -->
     <section id="portfolio" tabindex="-1">
       <h2>My Projects</h2>
-      <p>Coming soon: detailed RPA projects with videos and explanations.</p>
+      <p>Detailed RPA projects with videos and explanations.</p>
 
       <div class="projects-grid">
-
+        <!-- BlinkAccess Project -->
+        <article class="project-card">
+          <h3>BlinkAccess – Eye Blink Control for People with Motor Paralysis</h3>
+          <p>
+            Imagine being able to control your computer using only your eyes — even when the rest of your body cannot move.
+            BlinkAccess is an innovative system that makes this possible for individuals with total motor paralysis by allowing them to interact with a computer and call for help using simple eye blinks.
+          </p>
+          <p>
+            Using a regular webcam and intelligent algorithms, BlinkAccess detects different blink patterns to execute essential commands such as:
+          </p>
+          <ul>
+            <li>Calling for medical assistance with specific blink sequences</li>
+            <li>Playing and pausing music on YouTube</li>
+            <li>Navigating commands easily and intuitively</li>
+          </ul>
+          <p>
+            The system combines advanced computer vision techniques with operating system automation and voice feedback to provide an accessible, lightweight, and easy-to-use experience — all running in real-time on a standard laptop.
+          </p>
+          <h4>How It Works</h4>
+          <p>
+            BlinkAccess uses the webcam to track the user’s face with MediaPipe technology, identifying key eye landmarks. Based on the Eye Aspect Ratio (EAR) metric, it recognizes short and long blinks, interpreting them as commands to control computer actions.
+          </p>
+          <p>
+            To ensure safety and reduce errors, the system includes confirmation modes activated by long blinks, automatic rest periods, and audio feedback that guides the user through every step.
+          </p>
+          <h4>Why BlinkAccess?</h4>
+          <p>
+            This project is a real social solution with the potential to improve the quality of life for people with limited mobility by providing autonomy and safety through technology.
+            Its clean and modular codebase allows for future enhancements and adaptation to diverse assistive needs.
+          </p>
+            
+          <h4>See BlinkAccess in Action</h4>
+          <div class="video-container" style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; height:auto; margin-bottom:1rem;">
+            <!-- Troque o src pelo link do seu vídeo do YouTube ou outro player -->
+            <iframe src="https://www.youtube.com/embed/SEU_VIDEO_ID" frameborder="0" allowfullscreen
+              style="position:absolute; top:0; left:0; width:100%; height:100%;"></iframe>
+          </div>
+        </article>
         <!-- TCC como primeiro projeto -->
         <article class="project-card">
           <h3>Fuzzy Shell for Decision Support Systems</h3>
@@ -106,12 +143,14 @@
           <a href="https://repositorio.animaeducacao.com.br/items/22292449-5c4d-4edb-b1fd-f6170af4fca8" class="btn" target="_blank" aria-label="Open full paper PDF">Read full paper (PDF)</a>
         </article>
 
+
+
         <!-- Outro projeto -->
-        <article class="project-card">
+      <!--<article class="project-card">
           <h3>Project Title 2</h3>
           <p>Description of another RPA project, tools used and impact.</p>
           <a href="#" class="btn" aria-label="Watch video walkthrough of Project Title 2">Watch video</a>
-        </article>
+        </article> -->
 
       </div>
     </section>
