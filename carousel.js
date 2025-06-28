@@ -1,6 +1,17 @@
-// script.js
-
 document.addEventListener('DOMContentLoaded', () => {
+  // PRELOADER
+  window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+      preloader.style.opacity = '0';
+      preloader.style.transition = 'opacity 0.5s ease';
+
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500);
+    }
+  });
+
   const sidebar = document.querySelector('.sidebar');
   const menuLinks = document.querySelectorAll('.sidebar-menu a.menu-link');
   const sections = document.querySelectorAll('main section');
@@ -115,4 +126,45 @@ document.addEventListener('DOMContentLoaded', () => {
   nextButton.addEventListener('click', () => {
     moveToSlide(currentIndex + 1);
   });
+
+  // -------------------
+  // TYPING EFFECT LOOP - DIGITAÇÃO COM APAGAR E REPETIR
+  // -------------------
+
+  function typeWriterLoop(element, text, speed = 50, pause = 1000) {
+    let i = 0;
+    let isDeleting = false;
+
+    function type() {
+      if (!isDeleting) {
+        element.textContent = text.substring(0, i + 1);
+        i++;
+
+        if (i === text.length) {
+          setTimeout(() => {
+            isDeleting = true;
+            type();
+          }, pause);
+          return;
+        }
+      } else {
+        element.textContent = text.substring(0, i - 1);
+        i--;
+
+        if (i === 0) {
+          isDeleting = false;
+        }
+      }
+      setTimeout(type, speed);
+    }
+
+    type();
+  }
+
+  const typingElement = document.getElementById('typing-text');
+  const fullText = "Automating today, for a faster tomorrow.";
+
+  if (typingElement) {
+    typeWriterLoop(typingElement, fullText, 50, 1000);
+  }
 });

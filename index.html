@@ -16,14 +16,14 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="container header-content">
-      <img src="assets/perfil.jpg" alt="Beatriz Cristina Luiz" class="profile-photo" />
-      <div class="header-text">
-        <h1 class="fade-in">Beatriz Cristina Luiz</h1>
-        <p class="fade-in delay-1 subtitle">RPA Developer | Python | UiPath & Custom Automation | Backend Integration Specialist</p>
-        <p class="fade-in delay-2 tagline">Automating workflows, boosting efficiency, empowering teams.</p>
-      </div>
+  <div id="preloader">
+    <img src="assets/bot.png" alt="Loading..." />
+  </div>
+
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Beatriz Cristina Luiz</h1>
+      <p class="tagline" id="typing-text">Automating today, for a faster tomorrow.</p>
     </div>
   </header>
 
@@ -62,20 +62,31 @@
 
     <!-- About Section -->
     <section id="about" tabindex="-1">
-      <h2>About Me</h2>
-      <p>
-        Software Developer with solid experience in <strong>Robotic Process Automation (RPA)</strong>, backend development, and systems integration. I have worked both as an in-house developer and as a freelance RPA consultant for companies in Brazil and abroad.
-      </p>
-      <p>
-        My background includes designing automation for large healthcare institutions and developing machine-level algorithms in aerospace manufacturing. While my experience spans multiple areas of software engineering, my current professional focus is on <strong>RPA and intelligent process automation</strong>.
-      </p>
-      <p>
-        I’m passionate about optimizing workflows, eliminating manual tasks, and delivering scalable, high-impact automation solutions. I am actively seeking <strong>international opportunities</strong> where I can contribute as an RPA specialist.
-      </p>
-      <p>
-        Outside work, I enjoy playing piano, studying languages, board games, cycling, and volunteering as a catechist.
-      </p>
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about-container">
+        <img src="assets/perfil.jpg" alt="Beatriz Cristina Luiz" class="profile-photo" />
+        <div class="about-text">
+          <p>
+            Software Developer with solid experience in <strong>Robotic Process Automation (RPA)</strong>, backend development, and systems integration. I have worked both as an in-house developer and as a freelance RPA consultant for companies in Brazil and abroad.
+          </p>
+          <p>
+            My background includes designing automation for large healthcare institutions and developing machine-level algorithms in aerospace manufacturing. While my experience spans multiple areas of software engineering, my current professional focus is on <strong>RPA and intelligent process automation</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-additional-text">
+        <p>
+          I’m passionate about optimizing workflows, eliminating manual tasks, and delivering scalable, high-impact automation solutions. I am actively seeking <strong>international opportunities</strong> where I can contribute as an RPA specialist.
+        </p>
+        <p>
+          Outside work, I enjoy playing piano, studying languages, board games, cycling, and volunteering as a catechist.
+        </p>
+      </div>
     </section>
+
+
 
     <!-- Portfolio Section -->
     <section id="portfolio" tabindex="-1">
@@ -240,7 +251,7 @@
       </form>
     </section>
 
-  </main>
+</main>
 
   <footer>
     <p>&copy; 2025 Beatriz Cristina Luiz</p>
