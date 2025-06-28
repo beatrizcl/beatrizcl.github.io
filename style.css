@@ -35,7 +35,7 @@ header {
 .header-text h1 {
   font-size: 2rem;
   font-weight: 600;
-  color: #d1665f;
+  color: #000000;
   margin-bottom: 5px;
 }
 
@@ -102,7 +102,7 @@ nav {
 .nav-menu a:hover,
 .nav-menu a.active {
   background-color: #f0e5e4;
-  color: #d1665f;
+  color: #000000;
 }
 
 /* Seções */
@@ -112,7 +112,7 @@ main section {
 
 h2 {
   font-size: 1.5rem;
-  color: #d1665f;
+  color: #000000;
   margin-bottom: 20px;
 }
 
@@ -126,7 +126,7 @@ p, li {
   height: 150px;
   border-radius: 50%;
   object-fit: cover;
-  border: 3px solid #d1665f;
+  border: 3px solid #000000;
 }
 
 /* Projetos */
@@ -145,13 +145,13 @@ p, li {
 
 .project-card h3 {
   margin-bottom: 10px;
-  color: #d1665f;
+  color: #000000;
 }
 
 .project-card .btn {
   display: inline-block;
   padding: 8px 16px;
-  background-color: #d1665f;
+  background-color: #000000;
   color: #fff;
   border-radius: 6px;
   text-decoration: none;
@@ -160,7 +160,7 @@ p, li {
 }
 
 .project-card .btn:hover {
-  background-color: #b44f48;
+  background-color: #000000;
 }
 
 /* Carrossel */
@@ -254,7 +254,7 @@ p, li {
 
 .contact-form button {
   padding: 12px 24px;
-  background-color: #d1665f;
+  background-color: #000000;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -264,7 +264,7 @@ p, li {
 }
 
 .contact-form button:hover {
-  background-color: #b44f48;
+  background-color: #000000;
 }
 
 /* Ícones sociais */
@@ -276,12 +276,12 @@ p, li {
 }
 
 .social-icons a {
-  color: #d1665f;
+  color: #000000;
   transition: color 0.3s;
 }
 
 .social-icons a:hover {
-  color: #b44f48;
+  color: #000000;
 }
 
 /* Rodapé */
@@ -382,7 +382,7 @@ footer {
 .sidebar-menu a:hover,
 .sidebar-menu a.active {
   background-color: #f0e5e4;
-  color: #d1665f;
+  color: #000000;
 }
 
 .sidebar-menu i {
