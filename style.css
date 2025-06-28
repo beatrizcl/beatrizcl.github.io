@@ -119,9 +119,9 @@ p, li {
 .profile-photo {
   width: 180px;
   height: 180px;
-  border-radius: 12px; /* cantos arredondados */
+  border-radius: 50%; /* torna a foto redonda */
   object-fit: cover;
-  border: 3px solid #000000;
+  border: 3px solid #575252;
   flex-shrink: 0;
 }
 
