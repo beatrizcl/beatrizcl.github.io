@@ -197,7 +197,126 @@
           <h4>The code is not publicly available because it is part of a thesis project...</h4>
           <a href="https://repositorio.animaeducacao.com.br/items/22292449-5c4d-4edb-b1fd-f6170af4fca8" class="btn" target="_blank" aria-label="Open full paper PDF">but you can read the full paper (PDF).</a>
         </article>
+        <!-- Eight Queens Project -->
+        <article class="project-card">
+          <h3>Eight Queens – Solving the Classic Chess Problem with Backtracking</h3>
+          <p>
+            Have you ever wondered how to place eight queens on a chessboard so that none of them attack each other?
+            The Eight Queens Problem is a famous computer science challenge that tests logical reasoning, recursion, and backtracking techniques.
+          </p>
+          <p>
+            This Java project implements a complete solution for the Eight Queens problem using backtracking to explore all possible safe positions on an 8x8 chessboard.
+            Each queen is placed in a row while checking if its column and diagonals are free. If no valid position is found, the algorithm backtracks to adjust previous placements.
+          </p>
+          <h4>How It Works</h4>
+          <p>
+            The algorithm places queens one by one in different rows, moving left to right across columns. Before placing a queen, it checks:
+          </p>
+          <ul>
+            <li>If another queen exists in the same column</li>
+            <li>If another queen exists on the upper-left diagonal</li>
+            <li>If another queen exists on the upper-right diagonal</li>
+          </ul>
+          <p>
+            If a valid position is found, it places the queen and proceeds to the next row. Otherwise, it removes the last placed queen and continues exploring alternatives (backtracking).
+          </p>
+          <h4>Why Eight Queens?</h4>
+          <p>
+            This project was one of my first implementations of backtracking algorithms in Java. It strengthened my understanding of recursion and problem decomposition, crucial for competitive programming and algorithm interviews.
+            Revisiting this code today reminds me how foundational challenges like this shape a developer’s analytical thinking.
+          </p>
+          <h4>You can review the full code on my GitHub repository:</h4>
+          <a href="https://github.com/beatrizcl/EightQueens/blob/master/EightQueens.java" class="btn" target="_blank" aria-label="Open Eight Queens Java Code">View Eight Queens Solution</a>
+        </article>
 
+        <!-- BackPropagation Neural Network Project -->
+        <article class="project-card">
+          <h3>BackPropagation Neural Network – Learning by Adjusting Weights</h3>
+          <p>
+            Have you ever wondered how neural networks actually learn? BackPropagation is the core algorithm behind training many artificial neural networks used today in AI and machine learning applications.
+          </p>
+          <p>
+            This Java project implements a simple feedforward neural network with BackPropagation learning. It adjusts the weights of neurons based on the error between expected and actual outputs, reducing the error over time to improve prediction accuracy.
+          </p>
+          <h4>How It Works</h4>
+          <p>
+            The neural network consists of an input layer, one hidden layer, and an output layer. The BackPropagation algorithm operates in two phases:
+          </p>
+          <ul>
+            <li><strong>Forward pass:</strong> Input data propagates through the network to generate an output.</li>
+            <li><strong>Backward pass:</strong> The error between expected and predicted output is calculated, and gradients are propagated back through the network to adjust weights and biases using the learning rate.</li>
+          </ul>
+          <p>
+            This iterative process continues for multiple epochs until the network reaches a desired accuracy or minimum error threshold.
+          </p>
+          <h4>Why BackPropagation?</h4>
+          <p>
+            This was my first implementation of neural network training from scratch without using any external ML libraries. It helped me understand the mathematics of gradient descent, activation functions, and weight updates — fundamental concepts behind modern AI models.
+            Revisiting this code today reminds me of the importance of understanding the underlying algorithms that power high-level frameworks.
+          </p>
+          <h4>You can review the full code on my GitHub repository:</h4>
+          <a href="https://github.com/beatrizcl/backPropagation" class="btn" target="_blank" aria-label="Open BackPropagation Neural Network Java Code">View BackPropagation Neural Network</a>
+        </article>
+
+                <!-- Hebbian Learning Algorithm Project -->
+        <article class="project-card">
+          <h3>Hebbian Learning – The Algorithm That Mimics Brain Synapses</h3>
+          <p>
+            “Neurons that fire together wire together.” This simple principle, proposed by Donald Hebb in 1949, became the foundation of Hebbian Learning – a neural learning algorithm inspired by the way biological neurons strengthen their connections.
+          </p>
+          <p>
+            This Java project implements the Hebb learning rule to train a single-layer neural network for pattern recognition. Unlike BackPropagation, Hebbian learning is an unsupervised method that strengthens the connection between neurons that activate simultaneously.
+          </p>
+          <h4>How It Works</h4>
+          <p>
+            The algorithm updates the weights of each neuron using the formula:
+          </p>
+          <ul>
+            <li><strong>w<sub>i</sub> = w<sub>i</sub> + x<sub>i</sub> * y</strong></li>
+          </ul>
+          <p>
+            Where <strong>x<sub>i</sub></strong> is the input and <strong>y</strong> is the output of the neuron. Over multiple training examples, weights adjust to represent the correlation between inputs and outputs, enabling the network to recognize specific patterns.
+          </p>
+          <h4>Why Hebbian Learning?</h4>
+          <p>
+            This project helped me understand the origins of neural network learning before the advent of gradient-based methods like BackPropagation. Hebbian learning remains influential in neuroscience and AI research, especially in unsupervised and reinforcement learning models.
+            Revisiting this implementation reinforced my understanding of how biological inspiration drives computational algorithms.
+          </p>
+          <h4>You can review the full code on my GitHub repository:</h4>
+          <a href="https://github.com/beatrizcl/hebbAlg" class="btn" target="_blank" aria-label="Open Hebbian Learning Algorithm Java Code">View Hebbian Learning Algorithm</a>
+        </article>
+
+        <!-- LMS Compiler Project -->
+        <article class="project-card">
+          <h3>LMS Compiler – Building a Compiler from Scratch</h3>
+          <p>
+            Have you ever wondered how programming languages translate your code into machine instructions? Compilers are the backbone of this process, analyzing, interpreting, and converting high-level languages into executable form.
+          </p>
+          <p>
+            This Java project implements a basic compiler for the LMS (Language Made Simple) language, built entirely from scratch as part of my formal languages and compilers studies.
+            It includes lexical analysis, syntax analysis (parsing), semantic checking, and code generation stages, providing a full pipeline for transforming source code into target output.
+          </p>
+          <h4>How It Works</h4>
+          <p>
+            The compiler performs the following steps:
+          </p>
+          <ul>
+            <li><strong>Lexical Analysis:</strong> Tokenizes the input source code, identifying keywords, identifiers, numbers, and symbols.</li>
+            <li><strong>Syntax Analysis:</strong> Parses the sequence of tokens based on LMS grammar rules to build a parse tree representing the program structure.</li>
+            <li><strong>Semantic Analysis:</strong> Checks for meaning correctness, such as variable declarations and type consistency.</li>
+            <li><strong>Code Generation:</strong> Produces an intermediate or final code output simulating how a real compiler generates machine code or bytecode.</li>
+          </ul>
+          <p>
+            The project demonstrates the design of deterministic finite automata, parsing techniques, and compiler architecture principles.
+          </p>
+          <h4>Why Build a Compiler?</h4>
+          <p>
+            Writing a compiler from scratch deepened my understanding of how programming languages work internally, how syntax and semantics are defined, and how interpreters and runtime environments process code.
+            It strengthened my skills in theoretical computer science, algorithm design, and software architecture — essential knowledge for any developer aiming to master backend systems and language processing.
+          </p>
+          <h4>You can review the full code on my GitHub repository:</h4>
+          <a href="https://github.com/beatrizcl/LMScompiler" class="btn" target="_blank" aria-label="Open LMS Compiler Java Code">View LMS Compiler</a>
+        </article>
 
 
         <!-- Outro projeto -->
